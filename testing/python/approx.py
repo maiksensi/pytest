@@ -55,6 +55,14 @@ class TestApprox(object):
         for a, x in examples:
             assert a == approx(x)
 
+    def test_lt_raises_notimplementederror(self):
+        with pytest.raises(NotImplementedError):
+            assert 1 < approx(1, rel=1e-6, abs=1e-12)
+
+    def test_lt_raises_notimplementederror(self):
+        with pytest.raises(NotImplementedError):
+            assert 1 < approx(1, rel=1e-6, abs=1e-12)
+
     def test_opposite_sign(self):
         examples = [
                 (eq, 1e-100, -1e-100),

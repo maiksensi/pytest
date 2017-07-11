@@ -1402,6 +1402,12 @@ class approx(object):
     def __ne__(self, actual):
         return not (actual == self)
 
+    def __gt__(self, actual):
+        raise NotImplementedError
+
+    def __lt__(self, actual):
+        raise NotImplementedError
+
     @property
     def expected(self):
         # Regardless of whether the user-specified expected value is a number
